@@ -4,13 +4,11 @@ const getTrainDetailsRouter = require('./routes/getTrainDetails');
 
 const app = express();
 
-// Add middleware and other configurations
+// all routes
+app.use('/getAllTrains', getAllTrainsRouter);
 
-// Use the routes
-app.use('/train/trains', getAllTrainsRouter);
-app.use('/train/trains/:trainId', getTrainDetailsRouter);
+app.use('/getTrainDetails', getTrainDetailsRouter);
 
-// Start the server
 app.listen(8080, () => {
   console.log('Server is running on port 8080');
 });
